@@ -1,9 +1,9 @@
-export { loginMethod, LoginCaptcha } from "./lib/globals";
+export { loginMethod, LoginCaptcha, SolveResult } from "./lib/globals";
 
-import { loginMethod } from "./src";
+import { loginMethod, SolveResult } from "./src";
 
 export declare const solveCaptcha: (
     challengeId: string,
     login: loginMethod,
     maxAttempts?: number
-) => Promise<boolean>;
+) => Promise<SolveResult>;

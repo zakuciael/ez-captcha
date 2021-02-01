@@ -19,3 +19,8 @@ export interface LoginCaptcha {
     requireCaptcha: boolean;
     id?: string;
 }
+
+export interface SolveResult {
+    id: string;
+    solved: boolean;
+}

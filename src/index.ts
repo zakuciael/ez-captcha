@@ -1,4 +1,9 @@
-import { CAPTCHA_MAX_ATTEMPTS, CAPTCHA_SOLVE_MAX_ATTEMPTS, loginMethod } from "./lib/globals";
+import {
+    CAPTCHA_MAX_ATTEMPTS,
+    CAPTCHA_SOLVE_MAX_ATTEMPTS,
+    loginMethod,
+    SolveResult,
+} from "./lib/globals";
 import { getResources } from "./lib/getResources";
 import { sendAnswer } from "./lib/sendAnswer";
 import { getConfig } from "./lib/getConfig";
@@ -7,12 +12,12 @@ export const solveCaptcha = async (
     challengeId: string,
     login: loginMethod,
     maxAttempts = CAPTCHA_MAX_ATTEMPTS
-): Promise<boolean> => {
+): Promise<SolveResult> => {
     const config = await getConfig(challengeId);
     if (config.id !== challengeId) challengeId = config.id;
 
     const resourcesLoaded = await getResources(challengeId, config.lastUpdated);
-    if (!resourcesLoaded) return false;
+    if (!resourcesLoaded) return { id: challengeId, solved: false };
 
     let solved = false;
     for (let captchaAttempt = 0; captchaAttempt < maxAttempts; captchaAttempt++) {
@@ -32,7 +37,7 @@ export const solveCaptcha = async (
         if (result.requireCaptcha && result.id) challengeId = result.id;
     }
 
-    return solved;
+    return { id: challengeId, solved: solved };
 };
 
-export { loginMethod, LoginCaptcha } from "./lib/globals";
+export { loginMethod, LoginCaptcha, SolveResult } from "./lib/globals";
