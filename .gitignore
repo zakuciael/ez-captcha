@@ -14,6 +14,9 @@ logs/
 log/
 *.log
 
+# Tests
+src/test.ts
+
 # Excludes
 !.eslintrc.js
 !.prettierrc.js
