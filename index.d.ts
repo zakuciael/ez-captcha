@@ -1,6 +1,14 @@
-export { loginMethod, LoginCaptcha, SolveResult } from "./lib/globals";
+export type loginMethod = () => Promise<LoginCaptcha>;
 
-import { loginMethod, SolveResult } from "./src";
+export interface LoginCaptcha {
+    requireCaptcha: boolean;
+    id?: string;
+}
+
+export interface SolveResult {
+    id: string;
+    solved: boolean;
+}
 
 export declare const solveCaptcha: (
     challengeId: string,
