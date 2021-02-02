@@ -1,6 +1,6 @@
 {
   "name": "@banzar-team/ez-captcha",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A non-AI powered node.js library for solving GameFail's captcha.",
   "main": "dist/index.js",
   "repository": "https://github.com/banzar-team/ez-captcha.git",
