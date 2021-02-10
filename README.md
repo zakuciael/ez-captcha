@@ -4,22 +4,11 @@ A non-AI powered node.js library for solving GameFail's captcha.
 
 ## Installation
 
-Before installation, you need to set up the registry where the package is located to do that use this command:
-
 ```bash
-yarn config set @banzar-team:registry https://npm.pkg.github.com
+yarn add @zakuciael/ez-captcha
 # or
-npm config set @banzar-team:registry https://npm.pkg.github.com
+npm i @zakuciael/ez-captcha
 ```
-
-Now you need to add authentication to the registry, to do that generate a personal access token (PAT) with the following
-scopes `read:packages` and `repo`. Now use this command to set it in the package manager:
-
-```bash
-npm config set //npm.pkg.github.com/:_authToken=<PAT>
-```
-
-> Note: There is no **yarn** version of this command, but this also works with yarn.
 
 # Usage
 
