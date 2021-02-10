@@ -5,9 +5,9 @@ A non-AI powered node.js library for solving GameFail's captcha.
 ## Installation
 
 ```bash
-yarn add @zakuciael/ez-captcha
+yarn add @zakku/ez-captcha
 # or
-npm i @zakuciael/ez-captcha
+npm i @zakku/ez-captcha
 ```
 
 # Usage
