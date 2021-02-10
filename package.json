@@ -1,6 +1,6 @@
 {
   "name": "@zakku/ez-captcha",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A non-AI powered node.js library for solving GameFail's captcha.",
   "main": "dist/index.js",
   "repository": "https://github.com/zakuciael/ez-captcha.git",
